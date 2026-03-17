@@ -3,8 +3,8 @@ trigger: none  # Don't trigger on commits to the pipeline repo itself
 
 resources:
   pipelines:
-    - pipeline: sourceCodeStub       # Alias for the stub pipeline
-      source: 'bobo-okeefe.demo' # Name of the stub pipeline in ADO
+    - pipeline: sourceCodeStub   # Alias for the stub pipeline
+      source: 'bob-okeefe.demo' # Name of the stub pipeline in ADO
       project: POC-NonProd
       trigger:
         branches:
