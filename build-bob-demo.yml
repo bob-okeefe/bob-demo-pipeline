@@ -1,0 +1,30 @@
+# build-bob-demo.yml (stored in bob-demo-pipeline repo)
+
+trigger: none  # This pipeline is NOT triggered by changes in bob-demo-pipeline
+
+resources:
+  repositories:
+    - repository: sourceRepo          # Alias used in this pipeline
+      type: github
+      name: bob-okeefe/bob-demo       # Replace <your-org> with your GitHub org/username
+      ref: refs/heads/main            # Branch to monitor
+      endpoint: bob-okeefe            # Your GitHub service connection name
+      trigger:
+        branches:
+          include:
+            - main                    # Trigger when main branch changes in bob-demo
+
+stages:
+  - stage: Build
+    jobs:
+      - job: BuildJob
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - checkout: sourceRepo      # Checks out bob-demo (not bob-demo-pipeline)
+            path: bob-demo
+
+          - script: |
+              echo "Building code from bob-demo..."
+              # Add your actual build steps here (e.g., dotnet build, npm install, etc.)
+            displayName: 'Build Source Code'
