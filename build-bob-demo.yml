@@ -4,11 +4,11 @@ trigger: none  # This pipeline is NOT triggered by changes in bob-demo-pipeline
 
 resources:
   repositories:
-    - repository: sourceRepo                  # Alias used in this pipeline
+    - repository: sourceRepo       # Alias used in this pipeline
       type: github
-      name: bob-okeefe/demo                   # Replace <your-org> with your GitHub org/username
-      ref: refs/heads/main                    # Branch to monitor
-      endpoint: github-connection-bob-okeefe  # Your GitHub service connection name
+      name: bob-okeefe/demo        # Replace <your-org> with your GitHub org/username
+      ref: refs/heads/main         # Branch to monitor
+      endpoint: github_bob-okeefe  # Your GitHub service connection name
       trigger:
         branches:
           include:
