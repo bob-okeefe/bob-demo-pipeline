@@ -21,8 +21,8 @@ stages:
         pool:
           vmImage: 'ubuntu-latest'
         steps:
-          - checkout: sourceRepo      # Checks out bob-demo (not bob-demo-pipeline)
-            path: bob-demo
+          - checkout: sourceRepo      # Checks out demo (not bob-demo-pipeline)
+            path: demo
 
           - script: |
               echo "Building code from bob-demo..."
