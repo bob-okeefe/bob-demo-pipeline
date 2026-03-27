@@ -6,7 +6,7 @@ resources:
   repositories:
     - repository: sourceRepo          # Alias used in this pipeline
       type: github
-      name: bob-okeefe/bob-demo       # Replace <your-org> with your GitHub org/username
+      name: bob-okeefe/demo           # Replace <your-org> with your GitHub org/username
       ref: refs/heads/main            # Branch to monitor
       endpoint: bob-okeefe            # Your GitHub service connection name
       trigger:
